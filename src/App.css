@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4 {
+    margin-block: 1rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.navbar__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.navbar {
+    background-color: #CA5A1B;
+}
+
+.navbar__left {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.navbar__right {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.navbar li {
+    list-style-type: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a:visited {
+
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 280px;
+    gap: 1em;
+}
+
+.login-form label {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    padding: 0.5em 1em;
+}
+
+.login-form button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+}
