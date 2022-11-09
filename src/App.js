@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Routes/Home";
@@ -7,6 +7,7 @@ import Articles from "./Routes/Articles";
 import Article from "./Routes/Article";
 import PageNotFound from "./Routes/PageNotFound";
 import { useState } from "react";
+import PrivateRoute from "./components/PrivateRoutes/PrivateRoutes";
 
 function App() {
 
@@ -16,25 +17,20 @@ function App() {
         <>
             {/* Dit kan later Layout component worden */ }
             <header>
-                <Navbar/>
+                <Navbar isAuth={ isAuthenticated } toggleAuth={ toggleIsAuthenticated }/>
             </header>
 
             {/* Routing opzetten */ }
             <Routes>
-                <Route path="/"
-                       element={ <Home/> }/>
+                <Route path="/" element={ <Home/> }/>
                 <Route path="/login"
-                       element={ <Login
-                           isAuth={ isAuthenticated }
-                           toggleAuth={ toggleIsAuthenticated }/> }/>
-                <Route>
-                    <Route path="/articles"
-                           element={ <Articles/> }/>
-                    <Route path="/article/:articleId"
-                           element={ <Article/> }/>
+                       element={ <Login isAuth={ isAuthenticated } toggleAuth={ toggleIsAuthenticated }/> }/>
+
+                <Route element={ <PrivateRoute isAuth={ isAuthenticated }/> }>
+                    <Route path="/articles" element={ <Articles/> } exact/>
+                    <Route path="/article/:articleId" element={ <Article/> }/>
                 </Route>
-                <Route path="*"
-                       element={ <PageNotFound/> }/>
+                <Route path="*" element={ <PageNotFound/> }/>
             </Routes>
 
             <footer>

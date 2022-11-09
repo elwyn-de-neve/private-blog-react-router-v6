@@ -11,7 +11,8 @@ const Article = () => {
             <p>
                 { data[articleId].content }
             </p>
-            <span>Terug naar <Link to="/">home</Link></span>
+            <br/>
+            <span>Terug naar <Link to="/articles">articles</Link></span>
         </main>
     );
 };

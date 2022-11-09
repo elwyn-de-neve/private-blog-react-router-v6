@@ -19,6 +19,7 @@ h1, h2, h3, h4 {
 .container {
     max-width: 1000px;
     margin: auto;
+    padding-inline: 1em;
 }
 
 .navbar__wrapper {
@@ -58,23 +59,35 @@ h1, h2, h3, h4 {
 
 }
 
+.navbar .isActive {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 0.15em;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;
-    max-width: 280px;
-    gap: 1em;
-}
-
-.login-form label {
-    display: flex;
-    flex-direction: column;
+    width: 200px;
 }
 
 .login-form input {
+    color: black;
+    margin-top: 1em;
     padding: 0.5em 1em;
 }
 
 .login-form button {
+    color: black;
     margin-top: 1em;
     padding: 0.5em 1em;
+}
+
+.item {
+    margin-left: 1.5em;
+    text-transform: capitalize;
+}
+
+.item a {
+    padding-left: 1em;
 }
